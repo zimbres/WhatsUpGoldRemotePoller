@@ -1,8 +1,12 @@
 ﻿global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Filters;
 global using Microsoft.AspNetCore.RateLimiting;
+global using Microsoft.OpenApi.Models;
+global using System.ComponentModel.DataAnnotations;
 global using System.Net.NetworkInformation;
 global using System.Net.Sockets;
 global using System.Reflection;
 global using System.Threading.RateLimiting;
+global using WhatsUpGoldRemotePoller.Authentication;
 global using WhatsUpGoldRemotePoller.Models;
 global using WhatsUpGoldRemotePoller.Services;

@@ -3,6 +3,7 @@
 [Route("[controller]")]
 [ApiController]
 [EnableRateLimiting("fixed")]
+[ServiceFilter(typeof(ApiKeyAuthFilter))]
 public class PingController : ControllerBase
 {
     private readonly PingService _pingService;
@@ -13,9 +14,8 @@ public class PingController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get(string address)
+    public async Task<IActionResult> Get([FromQuery, Required] string address)
     {
-        var headers = Request.Headers;
         var result = await _pingService.PingAsync(address);
         return Ok(result);
     }

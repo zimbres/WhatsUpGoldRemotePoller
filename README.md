@@ -20,11 +20,13 @@ Create an Active Monitor for HTTP Content Monitor using the address where the po
 
 `http://192.168.100.190:5002/%Device.HostName`
 
-
 ![image](assets/monitor.png)
 
+In the 'Advanced settings', set a custom header with the name 'Authorization' and the value identical to the one set in the appsettings.json file, for example, 'Bearer 0bJm052H9Mhqf1wity8fkKNE':
 
-"Create a Device with a dummy IP address (this value is ignored). Set the hostname as follows:
+![image](assets/advanced.png)
+
+Create a Device with a dummy IP address (this value is ignored). Set the hostname as follows:
 
 - Ping?address=1.1.1.1
 - HTTP?address=https://google.com
@@ -37,6 +39,10 @@ The HTTP monitor will ignore any SSL invalid state.
 
 The Certificate will check for validity and expiration 30 days in advance, unless a different value is set in the 'CertificateExpiration' field in the appsettings.json file.
 
+`⚠️ Due to the way the httpClient is constructed for certificate validation, use it with care. Too frequent checks can lead to TCP exhaustion on the machine running the Poller. I suggest not setting the Polling Interval to less than 1 hour.`
+
+Authentication can be disabled by changing to 'false' the value of 'AuthEnabled' in appsettings.json file
+
 ---
 
 ## ⭐ Features
@@ -46,7 +52,7 @@ The Certificate will check for validity and expiration 30 days in advance, unles
   - ✅ HTTP Monitor
   - ❌ HTTP Monitor with HTTP Request Method selection
   - ✅ Certificate Monitor
-  - ❌ API Authentication
+  - ✅ API Authentication
   - ❌ Other Monitor types
 ---
 

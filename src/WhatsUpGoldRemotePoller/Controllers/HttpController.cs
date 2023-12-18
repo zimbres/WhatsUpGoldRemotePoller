@@ -3,6 +3,7 @@
 [Route("[controller]")]
 [ApiController]
 [EnableRateLimiting("fixed")]
+[ServiceFilter(typeof(ApiKeyAuthFilter))]
 public class HttpController : ControllerBase
 {
     private readonly HttpService _httpService;
@@ -13,7 +14,7 @@ public class HttpController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get(string address)
+    public async Task<IActionResult> Get([FromQuery, Required] string address)
     {
         var result = await _httpService.HttpAsync(address);
         return Ok(result);

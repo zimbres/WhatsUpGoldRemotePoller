@@ -3,6 +3,7 @@
 [Route("[controller]")]
 [ApiController]
 [EnableRateLimiting("fixed")]
+[ServiceFilter(typeof(ApiKeyAuthFilter))]
 public class CertificateController : ControllerBase
 {
     private readonly CertificateService _certificateService;
@@ -13,7 +14,7 @@ public class CertificateController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get(string address)
+    public async Task<IActionResult> Get([FromQuery, Required] string address)
     {
         var result = await _certificateService.CertificateAsync(address);
         return Ok(result);

@@ -3,13 +3,11 @@
 public class CertificateService
 {
     private readonly ILogger<CertificateService> _logger;
-    private readonly IHttpClientFactory _httpClientFactory;
     private readonly AppSettings _appSettings;
 
-    public CertificateService(ILogger<CertificateService> logger, IHttpClientFactory httpClientFactory, AppSettings appSettings)
+    public CertificateService(ILogger<CertificateService> logger, AppSettings appSettings)
     {
         _logger = logger;
-        _httpClientFactory = httpClientFactory;
         _appSettings = appSettings;
     }
     public async Task<bool> CertificateAsync(string address)
@@ -25,8 +23,7 @@ public class CertificateService
             }
         };
 
-        var httpClient = _httpClientFactory.CreateClient("IgnoreSSL");
-        httpClient = new HttpClient(httpClientHandler);
+        var httpClient = new HttpClient(httpClientHandler);
 
         try
         {
