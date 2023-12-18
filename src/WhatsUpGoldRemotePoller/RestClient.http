@@ -1,0 +1,25 @@
+@WhatsUpGoldRemotePoller_HostAddress = http://localhost:8000
+
+
+GET {{WhatsUpGoldRemotePoller_HostAddress}}/
+Accept: application/json
+
+###
+
+GET {{WhatsUpGoldRemotePoller_HostAddress}}/Ping?address=1.1.1.1
+Accept: application/json
+
+###
+
+GET {{WhatsUpGoldRemotePoller_HostAddress}}/Tcp?address=1.1.1.1&port=80
+Accept: application/json
+
+###
+
+GET {{WhatsUpGoldRemotePoller_HostAddress}}/Http?address=http://localhost:8000
+Accept: application/json
+
+###
+
+GET {{WhatsUpGoldRemotePoller_HostAddress}}/Certificate?address=https://google.com
+Accept: application/json

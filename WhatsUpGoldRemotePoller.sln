@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsUpGoldRemotePoller", "src\WhatsUpGoldRemotePoller\WhatsUpGoldRemotePoller.csproj", "{42AF84DC-0C47-48AE-9B9E-A9C15088F3EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A5080F89-0572-4918-A222-13F27406422B}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		LICENSE = LICENSE
+		README.md = README.md
+		SECURITY.md = SECURITY.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42AF84DC-0C47-48AE-9B9E-A9C15088F3EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42AF84DC-0C47-48AE-9B9E-A9C15088F3EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42AF84DC-0C47-48AE-9B9E-A9C15088F3EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42AF84DC-0C47-48AE-9B9E-A9C15088F3EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {090EE8D8-401E-4CFB-A1EF-94B4A9F5ACE0}
+	EndGlobalSection
+EndGlobal
