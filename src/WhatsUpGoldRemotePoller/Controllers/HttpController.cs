@@ -14,9 +14,9 @@ public class HttpController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get([FromQuery, Required] string address)
+    public async Task<IActionResult> Get([FromQuery, Required] string address, string keyword)
     {
-        var result = await _httpService.HttpAsync(address);
+        var result = await _httpService.HttpAsync(address, keyword);
         return Ok(result);
     }
 }

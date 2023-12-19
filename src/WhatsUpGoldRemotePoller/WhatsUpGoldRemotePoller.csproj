@@ -7,7 +7,7 @@
     <InvariantGlobalization>true</InvariantGlobalization>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
-    <Version>1.0.0.2</Version>
+    <Version>1.0.0.3</Version>
     <Authors>zimbres</Authors>
     <Company>Zimbres.Com</Company>
     <Product>WhatsUp Gold Remote Poller</Product>
@@ -18,7 +18,12 @@
     <AssemblyVersion>$(PackageVersion)</AssemblyVersion>
     <FileVersion>$(PackageVersion)</FileVersion>
     <Description>Web Api to work with WhatsUp Gold HTTP Content Monitor</Description>
+    <ApplicationIcon>api.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="api.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />

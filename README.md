@@ -30,6 +30,7 @@ Create a Device with a dummy IP address (this value is ignored). Set the hostnam
 
 - Ping?address=1.1.1.1
 - HTTP?address=https://google.com
+- HTTP?address=https://google.com&keyword=AnyKeyword
 - Certificate?address=https://google.com
 - Tcp?address=1.1.1.1&port=80
 
@@ -50,6 +51,7 @@ Authentication can be disabled by changing to 'false' the value of 'AuthEnabled'
   - ✅ Ping Monitor
   - ✅ Tcp Monitor
   - ✅ HTTP Monitor
+  - ✅ HTTP Monitor with search keyword
   - ❌ HTTP Monitor with HTTP Request Method selection
   - ✅ Certificate Monitor
   - ✅ API Authentication

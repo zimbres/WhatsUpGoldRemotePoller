@@ -10,22 +10,27 @@ public class HttpService
         _logger = logger;
         _httpClient = httpClientFactory.CreateClient("IgnoreSSL");
     }
-    public async Task<bool> HttpAsync(string address)
+    public async Task<bool> HttpAsync(string address, string keyword)
     {
-        HttpResponseMessage result = null;
+        HttpResponseMessage response = null;
+        string result = null;
 
         try
         {
-            result = await _httpClient.GetAsync(address);
-            _ = await result.Content.ReadAsStringAsync();
+            response = await _httpClient.GetAsync(address);
+            result = await response.Content.ReadAsStringAsync();
         }
         catch (Exception ex)
         {
             _logger.LogWarning("{ex}", ex.Message);
         }
 
-        if (result is not null && result.IsSuccessStatusCode)
+        if (response is not null && response.IsSuccessStatusCode)
         {
+            if(keyword is not null && !result.Contains(keyword, StringComparison.CurrentCultureIgnoreCase))
+            {
+                return false;
+            }
             return true;
         }
         return false;
